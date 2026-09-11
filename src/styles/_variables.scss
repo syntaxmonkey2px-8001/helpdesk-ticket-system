@@ -9,52 +9,78 @@
 // - No hamburger; sidebar always visible on desktop
 
 // **Typography:**
-// - Headings: sans-serif, bold, hierarchical (24px page title, 16px section, 14px table header)
-// - Body: sans-serif, 14px, line-height 1.5
-// - Ticket IDs: monospace, 12px
-// $Secondary text: #666666 (muted)
-// $Primary text: #1a1a1a (dark grey/black)
+// - Headings: 
+$font-family-heading: sans-serif;
+//  bold, hierarchical
+$font-weight-bold: 600;
+$fs-page-title: 24px;
+$fs-section: 16px;
+$fs-table-header: 14px;
+
+// - Body:
+$font-family-body: sans-serif;
+$fs-body-text: 14px;
+$line-height: 1.5;
+
+// - Ticket IDs: 
+$font-family-id: monospace;
+$fs-id: 12px;
+
+$color-primary: #1a1a1a;
+$color-secondary: #666666; //(muted)
 
 // **Spacing & Sizing:**
 // - 8px base unit
-// - Page padding: 24px
-// - Card/panel padding: 16px
-// - Table row height: 40px
-// - Component margins: 16px vertical, 0 horizontal
-// - Detail panel: 40% width (desktop)
+$padding-page: 24px;
+$padding-card: 16px;
+// - Table 
+$height-tr: 40px;
+// - Component 
+$margins: 16px 0;
+
+
+// - Detail panel:
+// 40% width (desktop)
 
 // **Colour Palette:**
-$background: #f5f5f5;// (very light grey)
-$surfaces: #ffffff;// (cards, panels, table)
-$borders: #e0e0e0;// (subtle)
+$background: #f5f5f5; // (very light grey)
+$surfaces: #ffffff; // (cards, panels, table)
+$borders: #e0e0e0; // (subtle)
 $text-primary: #1a1a1a;
 $text-secondary: #666666;
 $accent: #0066cc; // (blue — buttons, links, highlights)
 
 // **Status Badges** (background + text):
 $status-open-bg: #e3f2fd; // (light blue bg) + 
-$status-open-text:#0052a3; // (dark blue text)
-$status-in-progress-bg: #fff3e0;// (light amber bg) + 
-$status-in-progress-text:#e65100;// (dark amber text)
-$status--waiting-bg: #f5f5f5;// (light grey bg) +
-$status--waiting-text: #666666;// (grey text)
-$status-resolved-bg: #e8f5e9;// (light green bg) + 
-$status-resolved-text:#1b5e20;// (dark green text)
-$status-closed-bg: #eeeeee;// (very light grey bg) + 
-$status-closed-text:#424242;// (dark grey text)
+$status-open-text: #0052a3; // (dark blue text)
+$status-inProgress-bg: #fff3e0; // (light amber bg) + 
+$status-inProgress-text: #e65100; // (dark amber text)
+$status-waiting-bg: #f5f5f5; // (light grey bg) +
+$status-waiting-text: #666666; // (grey text)
+$status-resolved-bg: #e8f5e9; // (light green bg) + 
+$status-resolved-text: #1b5e20; // (dark green text)
+$status-closed-bg: #eeeeee; // (very light grey bg) + 
+$status-closed-text: #424242; // (dark grey text)
 
 // **Priority Badges** (same pattern):
 $priority-high-bg: #ffebee; // (light red bg) +
-$priority-high-text: #c62828;// (dark red text)
-$priority-medium-bg: #fff3e0;// (light amber bg) + 
-$priority-medium-text:#e65100;// (dark amber text)
-$priority-low-bg: #e8f5e9;// (light green bg) + 
-$priority-low-text:#1b5e20;// (dark green text)
+$priority-high-text: #c62828; // (dark red text)
+$priority-medium-bg: #fff3e0; // (light amber bg) + 
+$priority-medium-text: #e65100; // (dark amber text)
+$priority-low-bg: #e8f5e9; // (light green bg) + 
+$priority-low-text: #1b5e20; // (dark green text)
 
 // **Buttons:**
-// - primary (Create Ticket): #0066cc bg, white text, 32px height, 8px padding, 4px border-radius
-// - Secondary (Cancel): transparent bg, #e0e0e0 border, #1a1a1a text, same sizing
-// - Hover: darken by 10%
+$btn-bg-primary: #0066cc; // (Create Ticket)
+$btn-text-primary: white; //
+$btn-height: 32px;
+$padding-btn: 8px;
+$border-radius-btn: 4px;
+// - Secondary (Cancel)same sizing: 
+$btn-bg-secondary:#0066cc11; 
+$btn-border: #e0e0e0;
+$btn-text-secondary:#1a1a1a;// text
+
 // - Disabled: opacity 50%, cursor not-allowed
 
 // **Form inputs / Dropdowns:**
@@ -67,10 +93,18 @@ $priority-low-text:#1b5e20;// (dark green text)
 // - Invalid: border #c62828, error text red below
 
 // **Table:**
-// $Header row: #f5f5f5 background, bold text, 14px
-// $Header text: #1a1a1a
-// $Row hover: #f9f9f9 background
-// - Row border-bottom: 1px #e0e0e0
+// $Header row: 
+$bg-table:#f5f5f5;
+// bold text, 
+$fs-table: 14px;
+// $Header 
+$color-table-header: #1a1a1a;
+// $Row hover: 
+$accent-table-bg:#f9f9f9;
+// - Row 
+$border-bottom-tr: 1px solid #e0e0e0;
+
+
 // - Sortable headers: pointer cursor, ▲▼ indicator in grey (#999999)
 // - Selected row (detail panel open): subtle blue highlight (#e3f2fd)
 

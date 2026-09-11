@@ -1,10 +1,26 @@
-.header-banner{
+@use '@/styles/_variables.scss';
+@use '@/styles/_mixins.scss';
+
+body {
+    @include mixins.base-style(variables.$background, variables.$text-primary);
+
+
+.header-banner {
+    @include mixins.base-font(variables.$font-family-body, variables.$color-primary, variables.$fs-section);
+
     display: flex;
     justify-content: space-around;
     width: 100%;
     align-items: center;
-    
-    h1{
+    height: 60px;
+
+    h1 {
+        @include mixins.base-font(variables.$font-family-heading, variables.$color-primary, variables.$fs-page-title);
         width: 50%;
+        font-weight: variables.$font-weight-bold;
+
     }
+
+}
+
 }

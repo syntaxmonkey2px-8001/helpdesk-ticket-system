@@ -1,0 +1,62 @@
+@use '@/styles/_variables.scss';
+
+// @mixin badge
+
+@mixin base-font($font-family, $color, $fs) {
+    font-family: $font-family;
+    color: $color;
+    font-size: $fs;
+}
+
+
+@mixin base-style ($background, $color) {
+    background-color: $background; // (very light grey)
+    color: $color; //
+}
+
+
+@mixin button-base($bg, $color) {
+    background-color: $bg;
+    color: $color;
+
+    padding: variables.$padding-btn;
+    border-radius: variables.$border-radius-btn;
+    height: variables.$btn-height;
+
+    &:hover {
+        filter: brightness(0.9);
+    }
+}
+
+@mixin table-base {
+    background-color: variables.$bg-table;
+    font-weight: variables.$font-weight-bold;
+    font-size: variables.$fs-table;
+    margin: variables.$margins;
+    padding: variables.$padding-card;
+
+    tr {
+        border-bottom: variables.$border-bottom-tr;
+        height: variables.$height-tr;
+
+
+        &:hover {
+            background-color: variables.$accent-table-bg;
+            cursor: variables.$cursor;
+        }
+    }
+}
+
+@mixin pill-base($bg, $text){
+    // @include button-base($bg, $text);
+
+    text-wrap: nowrap;
+    background-color: $bg;
+    color: $text;
+    // text-align: left;
+    outline: 1px solid $text;
+    border-radius: .2em;
+    padding: .25em 1em;
+    margin: 0 .75em;
+}
+

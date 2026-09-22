@@ -3,13 +3,27 @@ import '@/styles/app.scss'
 export default function TopNav() {
 
     return (
-        <>
-            <div className="header-banner">
-                <h1>Support Tickets</h1>
-                <div>Open</div>
-                <div>In Progress </div>
-                <div>Support Advisor Info</div>
+        <header className="header-banner">
+            <h1>Support Tickets</h1>
+
+            <div className="header-actions">
+                <div className="header-metric">
+                    <span>Open</span>
+                    <strong>12</strong>
+                </div>
+                <div className="header-metric">
+                    <span>In Progress</span>
+                    <strong>8</strong>
+                </div>
+
+                <div className="header-user">
+                    <div className="avatar">AM</div>
+                    <div className="user-meta">
+                        <span className="user-name">Alice Morgan</span>
+                        <span className="user-role">Support Lead</span>
+                    </div>
+                </div>
             </div>
-        </>
+        </header>
     )
 }

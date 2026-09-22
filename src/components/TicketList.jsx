@@ -3,12 +3,10 @@ import tickets from '@/data/mockData.js'
 
 import { useState } from 'react'
 
-
 function Table() {
     const [activeFilter, setActiveFilter] = useState('All');
 
-    const status = ['All', 'Open', 'In Progress', 'Waiting', 'Resolved', 'Closed'
-    ]
+    const status = ['All', 'Open', 'In Progress', 'Waiting', 'Resolved', 'Closed'];
 
     const statusFilters = {
         all: 'All',
@@ -17,7 +15,7 @@ function Table() {
         'Waiting for User': 'Waiting',
         Resolved: 'Resolved',
         Closed: 'Closed'
-    }
+    };
 
     const statusClass = {
         all: 'all',
@@ -26,17 +24,16 @@ function Table() {
         'Waiting for User': 'waiting',
         Resolved: 'resolved',
         Closed: 'closed'
-    }
+    };
 
     const priorityClass = {
         High: 'high',
         Medium: 'medium',
         Low: 'low'
+    };
 
-    }
-
-    function changeFilter(status) {
-        setActiveFilter(status)
+    function changeFilter(value) {
+        setActiveFilter(value);
     }
 
     console.log(activeFilter)
@@ -50,28 +47,46 @@ function Table() {
 
     console.log('show test count row:  ' + testRowCount);
 
+    //sort tix
+    
+    //
+
     return (
         <>
             <div className="filters">
-                {status.map((status) =>
-                    <div key={status} >
-                        <div onClick={() => changeFilter(status)} >
-                            {status}
-                            {status === 'All'
-                                ? tickets.length
-                                : tickets.filter((ticket) => ticket.status === status).length}
+                {status.map((label) => {
+                    const isActive = activeFilter === label;
+                    const count = label === 'All'
+                        ? tickets.length
+                        : tickets.filter((ticket) => statusFilters[ticket.status] === label).length;
+
+                    return (
+                        <div key={label}>
+                            <div
+                                className={isActive ? 'filter-pill active' : 'filter-pill'}
+                                onClick={() => changeFilter(label)}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(event) => {
+                                    if (event.key === 'Enter' || event.key === ' ') {
+                                        event.preventDefault();
+                                        changeFilter(label);
+                                    }
+                                }}
+                            >
+                                <span>{label}</span>
+                                <span className="filter-count">{count}</span>
+                            </div>
                         </div>
-
-                    </div>
-                )}
-                <div></div>
-
+                    );
+                })}
             </div>
+
             <div className='ticket-table'>
                 <table>
-                    <tbody >
+                    <tbody>
                         {filteredTickets.map((ticket) =>
-                            <tr key={ticket.id} >
+                            <tr key={ticket.id}>
                                 <td>{ticket.id}</td>
                                 <td>{ticket.title}</td>
                                 <td><p className={'status-' + statusClass[ticket.status]}>{ticket.status}</p></td>
@@ -83,13 +98,12 @@ function Table() {
                         )}
                     </tbody>
                 </table>
-            </div >
+            </div>
         </>
-    )
+    );
 }
 
 export default function TicketList() {
-
     return (
         <>
             <div className="ticket-list-view">
@@ -102,5 +116,5 @@ export default function TicketList() {
                 <Table />
             </div>
         </>
-    )
+    );
 }

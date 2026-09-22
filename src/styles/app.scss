@@ -1,26 +1,118 @@
 @use '@/styles/_variables.scss';
 @use '@/styles/_mixins.scss';
 
+:root {
+    color-scheme: light;
+    font-family: variables.$font-family-body;
+    background: variables.$background;
+    color: variables.$text-primary;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    margin: 0;
+    min-height: 100%;
+}
+
 body {
     @include mixins.base-style(variables.$background, variables.$text-primary);
-
+    font-family: variables.$font-family-body;
+    line-height: variables.$line-height;
+    letter-spacing: 0.01em;
+}
 
 .header-banner {
+    @include mixins.base-style(variables.$surfaces, variables.$text-primary);
     @include mixins.base-font(variables.$font-family-body, variables.$color-primary, variables.$fs-section);
 
     display: flex;
-    justify-content: space-around;
-    width: 100%;
     align-items: center;
-    height: 60px;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    min-height: 60px;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid variables.$borders;
+    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+    background: linear-gradient(180deg, variables.$surfaces 0%, #f8f9fb 100%);
 
     h1 {
         @include mixins.base-font(variables.$font-family-heading, variables.$color-primary, variables.$fs-page-title);
-        width: 50%;
+        margin: 0;
         font-weight: variables.$font-weight-bold;
-
+        letter-spacing: -0.04em;
     }
 
-}
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
 
+    .header-metric {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        min-height: 30px;
+        padding: 0.35rem 0.7rem;
+        border: 1px solid variables.$borders;
+        border-radius: 999px;
+        background: variables.$background;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: variables.$text-secondary;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+
+        strong {
+            color: variables.$accent;
+            font-weight: 800;
+        }
+    }
+
+    .header-user {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.45rem 0.8rem;
+        border: 1px solid variables.$borders;
+        border-radius: 12px;
+        background: variables.$background;
+    }
+
+    .avatar {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, variables.$accent 0%, #75aefc 100%);
+        color: white;
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+
+    .user-meta {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+    }
+
+    .user-name {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: variables.$text-primary;
+    }
+
+    .user-role {
+        font-size: 0.68rem;
+        color: variables.$text-secondary;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
 }

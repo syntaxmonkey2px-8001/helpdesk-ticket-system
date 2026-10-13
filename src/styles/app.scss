@@ -21,12 +21,18 @@ body {
     @include mixins.base-style(variables.$background, variables.$text-primary);
     font-family: variables.$font-family-body;
     line-height: variables.$line-height;
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
+}
+
+:focus-visible {
+    outline: 3px solid #ffeb3b;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px #212b32;
 }
 
 .header-banner {
-    @include mixins.base-style(variables.$surfaces, variables.$text-primary);
-    @include mixins.base-font(variables.$font-family-body, variables.$color-primary, variables.$fs-section);
+    @include mixins.base-style(variables.$accent, #ffffff);
+    @include mixins.base-font(variables.$font-family-body, #ffffff, variables.$fs-section);
 
     display: flex;
     align-items: center;
@@ -35,15 +41,14 @@ body {
     width: 100%;
     min-height: 60px;
     padding: 0.75rem 1.25rem;
-    border-bottom: 1px solid variables.$borders;
-    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
-    background: linear-gradient(180deg, variables.$surfaces 0%, #f8f9fb 100%);
+    border-bottom: 4px solid #003087;
+    background: variables.$accent;
 
     h1 {
-        @include mixins.base-font(variables.$font-family-heading, variables.$color-primary, variables.$fs-page-title);
+        @include mixins.base-font(variables.$font-family-heading, #ffffff, variables.$fs-page-title);
         margin: 0;
         font-weight: variables.$font-weight-bold;
-        letter-spacing: -0.04em;
+        letter-spacing: 0;
     }
 
     .header-actions {
@@ -59,18 +64,16 @@ body {
         gap: 0.4rem;
         min-height: 30px;
         padding: 0.35rem 0.7rem;
-        border: 1px solid variables.$borders;
-        border-radius: 999px;
-        background: variables.$background;
-        font-size: 0.72rem;
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        border-radius: 2px;
+        background: transparent;
+        font-size: 0.875rem;
         font-weight: 700;
-        color: variables.$text-secondary;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
+        color: #ffffff;
 
         strong {
-            color: variables.$accent;
-            font-weight: 800;
+            color: #ffffff;
+            font-weight: 700;
         }
     }
 
@@ -79,9 +82,9 @@ body {
         align-items: center;
         gap: 0.75rem;
         padding: 0.45rem 0.8rem;
-        border: 1px solid variables.$borders;
-        border-radius: 12px;
-        background: variables.$background;
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        border-radius: 2px;
+        background: transparent;
     }
 
     .avatar {
@@ -91,8 +94,8 @@ body {
         width: 28px;
         height: 28px;
         border-radius: 50%;
-        background: linear-gradient(135deg, variables.$accent 0%, #75aefc 100%);
-        color: white;
+        background: #ffffff;
+        color: variables.$accent;
         font-size: 0.7rem;
         font-weight: 700;
     }
@@ -106,13 +109,11 @@ body {
     .user-name {
         font-size: 0.8rem;
         font-weight: 700;
-        color: variables.$text-primary;
+        color: #ffffff;
     }
 
     .user-role {
-        font-size: 0.68rem;
-        color: variables.$text-secondary;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
+        font-size: 0.75rem;
+        color: #ffffff;
     }
 }

@@ -10,7 +10,7 @@
 
 // **Typography:**
 // - Headings: 
-$font-family-heading: sans-serif;
+$font-family-heading: Arial, sans-serif;
 //  bold, hierarchical
 $font-weight-bold: 600;
 $fs-page-title: 24px;
@@ -18,7 +18,7 @@ $fs-section: 16px;
 $fs-table-header: 14px;
 
 // - Body:
-$font-family-body: sans-serif;
+$font-family-body: Arial, sans-serif;
 $fs-body-text: 14px;
 $line-height: 1.5;
 
@@ -26,8 +26,8 @@ $line-height: 1.5;
 $font-family-id: monospace;
 $fs-id: 12px;
 
-$color-primary: #1a1a1a;
-$color-secondary: #666666; //(muted)
+$color-primary: #212b32;
+$color-secondary: #4c6272; //(muted)
 
 // **Spacing & Sizing:**
 // - 8px base unit
@@ -43,12 +43,12 @@ $margins: 16px 0;
 // 40% width (desktop)
 
 // **Colour Palette:**
-$background: #f5f5f5; // (very light grey)
+$background: #f0f4f5; // calm, neutral service background
 $surfaces: #ffffff; // (cards, panels, table)
-$borders: #e0e0e0; // (subtle)
-$text-primary: #1a1a1a;
-$text-secondary: #666666;
-$accent: #0066cc; // (blue — buttons, links, highlights)
+$borders: #bfc9ce; // clear, functional dividers
+$text-primary: #212b32;
+$text-secondary: #4c6272;
+$accent: #005eb8; // NHS-inspired blue for primary actions and focus
 
 // **Status Badges** (background + text):
 $status-open-bg: #e3f2fd; // (light blue bg) + 
@@ -94,15 +94,15 @@ $btn-text-secondary:#1a1a1a;// text
 
 // **Table:**
 // $Header row: 
-$bg-table:#f5f5f5;
+$bg-table:#f0f4f5;
 // bold text, 
 $fs-table: 14px;
 // $Header 
 $color-table-header: #1a1a1a;
 // $Row hover: 
-$accent-table-bg:#f9f9f9;
+$accent-table-bg:#f0f4f5;
 // - Row 
-$border-bottom-tr: 1px solid #e0e0e0;
+$border-bottom-tr: 1px solid #d8dde0;
 
 
 // - Sortable headers: pointer cursor, ▲▼ indicator in grey (#999999)
